@@ -25,11 +25,13 @@
         nav ul {
             list-style-type: none;
             padding: 0;
+            position: relative;
         }
 
         nav ul li {
             display: inline;
             margin: 0 15px;
+            position: relative;
         }
 
         nav ul li a {
@@ -37,17 +39,19 @@
             color: #00bcd4;
             font-weight: bold;
         }
-         /* Dropdown styles */
-         .dropdown {
+        /* Dropdown styles */
+        .dropdown {
             display: none;
             position: absolute;
             background-color: #1f1f1f;
-            min-width: 160px;
+            min-width: 450px;
             z-index: 1;
+            top: 100%; /* Position below the parent */
+            left: 0; /* Align to the left */
         }
 
         .dropdown li {
-            display: block;/* Stack dropdown items */
+            display: block; /* Stack dropdown items */
             text-align: left;
         }
 
