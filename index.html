@@ -37,6 +37,23 @@
             color: #00bcd4;
             font-weight: bold;
         }
+         /* Dropdown styles */
+         .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #1f1f1f;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown li {
+            display: block;/* Stack dropdown items */
+            text-align: left;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block; /* Show dropdown on hover */
+        }
 
         section {
             width: 60%;
@@ -93,7 +110,18 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#courses">Courses</a></li>
+                <li>
+                    <a href="#courses">Courses</a>
+                    <ul class="dropdown">
+                        <li><a href="#graphic-designing">Graphic Designing</a></li>
+                        <li><a href="#os-development">OS Development</a></li>
+                        <li><a href="#android-development">Android Development</a></li>
+                        <li><a href="#ai-development">AI Development</a></li>
+                        <li><a href="#frontend-development">Frontend Web Development</a></li>
+                        <li><a href="#backend-development">Backend Web Development & Database Management</a></li>
+                        <li><a href="#version-control">Version Control System</a></li>
+                    </ul>
+                </li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -207,7 +235,9 @@
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>Get in touch with us at <a href="mailto:info@educationhub.com">info@educationhub.com</a></p>
+        <p>Get in touch with us at <a href="mailto:altamashanwarkhan@gmail.com">altamashanwarkhan@gmail.com</a></p>
+        <p>Mobile No. 9661084858 / 9229953434</p>
+        <p>Whatsapp No. 9229953434</p>
     </section>
 </body>
 </html>
