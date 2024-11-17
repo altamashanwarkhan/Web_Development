@@ -1,103 +1,191 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Ensure header is at the top */
+    height: 100vh;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-header {
-    background-color: #1f1f1f;
-    color: #f8a306;
-    padding: 15px 0;
-    width: 100%;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    position: relative;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-    position: relative;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #00bcd4;
-    font-weight: bold;
-}
-/* Dropdown styles */
-.dropdown {
-    display: none;
-    position: absolute;
-    background-color: #1f1f1f;
-    min-width: 450px;
-    z-index: 1;
-    top: 100%; /* Position below the parent */
-    left: 0; /* Align to the left */
-}
-
-.dropdown li {
-    display: block; /* Stack dropdown items */
-    text-align: left;
-}
-
-nav ul li:hover .dropdown {
-    display: block; /* Show dropdown on hover */
-}
-
-section {
-    width: 60%;
-    padding: 20px;
-    margin: 20px 0;
-    background: #1f1f1f;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-h2 {
-    color: #00bcd4;
-}
-
-footer {
-    text-align: center;
+.theme-toggle {
+    background: #ffcd3c;
+    border: none;
     padding: 10px;
-    background-color: #1f1f1f;
-    color: #00bcd4;
+    cursor: pointer;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    width: 100%;
+    top: 60px;
     bottom: 0;
 }
 
-a {
-    color: #00bcd4;
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin: 1rem 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
     text-decoration: none;
+    font-size: 1.2rem;
 }
 
-a:hover {
-    text-decoration: underline;
+.main-content {
+    margin-left: 250px; /* Shift the main content to the right to avoid overlap with sidebar */
+    padding: 2rem;
+    flex-grow: 1;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-li {
-    margin: 10px 0;
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
-iframe {
-    display: block;
-    margin: 20px auto;
+.card h2 {
+    margin-bottom: 1rem;
+}
+
+.card button {
+    background-color: #ffcd3c;
     border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Light Theme Styles */
+body.light {
+    background-color: #fff;
+    color: #333;
+}
+
+.light .header {
+    background-color: #fff;
+    color: #333;
+}
+
+.light .sidebar {
+    background-color: #fff;
+    color: #333;
+}
+
+.light .sidebar nav ul li a {
+    color: #333;
+}
+
+.light .card {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.light .card button {
+    background-color: #333;
+    color: white;
+}
+
+/* Dark Theme Styles */
+body.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark .header {
+    background-color: #222;
+    color: white;
+}
+
+.dark .sidebar {
+    background-color: #222;
+    color: white;
+}
+
+.dark .sidebar nav ul li a {
+    color: white;
+}
+
+.dark .card {
+    background-color: #444;
+    color: white;
+}
+
+.dark .card button {
+    background-color: #ffcd3c;
+    color: #333;
+}
+#home {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+    background-color: #333; /* Dark background for contrast */
+}
+
+#home h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#home img {
+    width: 100%;
+    max-width: 700px;
+}
+
+#home .tagline {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(39, 39, 39, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#home .tagline h2 {
+    font-size: 1.5rem;
+    margin: 0;
 }
