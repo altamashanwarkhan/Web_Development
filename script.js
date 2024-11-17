@@ -1,6 +1,15 @@
-const themeToggleButton = document.getElementById('theme-toggle');
+document.addEventListener("DOMContentLoaded", () => {
+    // Handle dropdown toggle
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener("click", () => {
+            dropdown.classList.toggle("active");
+        });
+    });
 
-themeToggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    document.body.classList.toggle('light');
+    // Handle theme toggle
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+    });
 });
